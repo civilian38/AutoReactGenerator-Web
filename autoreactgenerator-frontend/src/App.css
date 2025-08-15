@@ -36,3 +36,103 @@
     transform: rotate(360deg);
   }
 }
+
+.auth-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #3e4450;
+  border-radius: 10px;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-wrapper h2 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background-color: #282c34;
+  color: white;
+  font-size: 1rem;
+  box-sizing: border-box; /* 패딩이 너비에 포함되도록 함 */
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #61dafb;
+  color: #282c34;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #79e2ff;
+}
+.submit-button:disabled {
+  background-color: #4a5a63;
+  cursor: not-allowed;
+}
+
+
+.logout-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid #61dafb;
+  background-color: transparent;
+  color: #61dafb;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.logout-button:hover {
+  background-color: #61dafb;
+  color: #282c34;
+}
+
+
+.error-message {
+  color: #ff6b6b;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.success-message {
+  color: #6bfb8e;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.switch-form {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.switch-form button {
+  background: none;
+  border: none;
+  color: #61dafb;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+}
