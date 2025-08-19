@@ -1,60 +1,62 @@
+body {
+  background-color: #282c34;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* --- 로그인/회원가입 페이지 --- */
+.auth-page-wrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
 .auth-container {
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: #3e4450;
-  border-radius: 10px;
+  max-width: 420px;
+  padding: 2.5rem;
+  background-color: #3a404a;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
+
+.main-title {
+    font-size: 2.5rem;
+    color: #61dafb;
+    margin-bottom: 0.5rem;
+}
+
+.main-subtitle {
+    font-size: 1rem;
+    color: #ccc;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
 
 .form-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 .form-wrapper h2 {
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #f0f0f0;
 }
 
 .input-group {
@@ -63,69 +65,52 @@
 
 .input-group input {
   width: 100%;
-  padding: 12px;
-  border-radius: 6px;
+  padding: 14px;
+  border-radius: 8px;
   border: 1px solid #555;
   background-color: #282c34;
   color: white;
   font-size: 1rem;
-  box-sizing: border-box; /* 패딩이 너비에 포함되도록 함 */
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #61dafb;
+    box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.2);
 }
 
 .submit-button {
   width: 100%;
-  padding: 12px;
-  border-radius: 6px;
+  padding: 14px;
+  border-radius: 8px;
   border: none;
   background-color: #61dafb;
   color: #282c34;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 .submit-button:hover {
   background-color: #79e2ff;
 }
+
+.submit-button:active {
+    transform: translateY(1px);
+}
+
 .submit-button:disabled {
   background-color: #4a5a63;
   cursor: not-allowed;
 }
 
-
-.logout-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border-radius: 6px;
-  border: 1px solid #61dafb;
-  background-color: transparent;
-  color: #61dafb;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.logout-button:hover {
-  background-color: #61dafb;
-  color: #282c34;
-}
-
-
-.error-message {
-  color: #ff6b6b;
-  text-align: center;
-  font-size: 0.9rem;
-}
-.success-message {
-  color: #6bfb8e;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
 .switch-form {
   text-align: center;
   font-size: 0.9rem;
+  color: #bbb;
 }
 
 .switch-form button {
@@ -135,4 +120,135 @@
   cursor: pointer;
   font-weight: bold;
   padding: 0;
+  font-size: 0.9rem;
+}
+
+/* --- 프로젝트 목록 페이지 --- */
+
+.project-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #4a505a;
+}
+
+.project-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #f0f0f0;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #61dafb;
+  background-color: transparent;
+  color: #61dafb;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.logout-button:hover {
+  background-color: #61dafb;
+  color: #282c34;
+}
+
+.loading-message {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: #3a404a;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #61dafb;
+}
+
+.project-card p {
+    margin-bottom: 1rem;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.project-meta {
+    font-size: 0.85rem;
+    color: #aaa;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #4a505a;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.pagination-controls {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.pagination-controls button {
+    padding: 10px 25px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background-color: #3a404a;
+    color: #f0f0f0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+    background-color: #4a505a;
+    border-color: #777;
+}
+
+.pagination-controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+/* --- 공통 메시지 스타일 --- */
+.error-message {
+  color: #ff8787;
+  text-align: center;
+  font-size: 0.9rem;
+  white-space: pre-wrap; /* 줄바꿈을 위해 추가 */
+}
+
+.success-message {
+  color: #87ff9d;
+  text-align: center;
+  font-size: 0.9rem;
 }
