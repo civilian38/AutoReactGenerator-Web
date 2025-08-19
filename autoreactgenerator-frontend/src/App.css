@@ -61,9 +61,18 @@ body {
 
 .input-group {
   width: 100%;
+  text-align: left; /* 라벨 정렬 */
 }
 
-.input-group input {
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.input-group input,
+.input-group textarea { /* textarea 스타일 추가 */
   width: 100%;
   padding: 14px;
   border-radius: 8px;
@@ -73,16 +82,17 @@ body {
   font-size: 1rem;
   box-sizing: border-box;
   transition: border-color 0.2s, box-shadow 0.2s;
+  resize: vertical; /* textarea 크기 조절 */
 }
 
-.input-group input:focus {
+.input-group input:focus,
+.input-group textarea:focus {
     outline: none;
     border-color: #61dafb;
     box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.2);
 }
 
 .submit-button {
-  width: 100%;
   padding: 14px;
   border-radius: 8px;
   border: none;
@@ -125,7 +135,8 @@ body {
 
 /* --- 프로젝트 목록 페이지 --- */
 
-.project-list-container {
+.project-list-container,
+.project-form-container { /* 공통 컨테이너 스타일 */
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
@@ -145,6 +156,29 @@ body {
     font-size: 2rem;
     color: #f0f0f0;
 }
+
+.header-actions { /* 버튼 그룹핑을 위한 div */
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.create-project-button { /* 새 프로젝트 생성 버튼 */
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #61dafb;
+  color: #282c34;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.create-project-button:hover {
+  background-color: #79e2ff;
+}
+
 
 .logout-button {
   padding: 10px 20px;
@@ -236,6 +270,50 @@ body {
 .pagination-controls button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+}
+
+
+/* --- 프로젝트 생성 폼 --- */
+.form-wrapper-project {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: #3a404a;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-actions .submit-button {
+  width: auto;
+  min-width: 120px;
+}
+
+.cancel-button {
+  padding: 14px;
+  width: auto;
+  min-width: 120px;
+  border-radius: 8px;
+  border: 1px solid #888;
+  background-color: transparent;
+  color: #f0f0f0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.cancel-button:hover:not(:disabled) {
+  background-color: #4a505a;
+  border-color: #aaa;
 }
 
 
